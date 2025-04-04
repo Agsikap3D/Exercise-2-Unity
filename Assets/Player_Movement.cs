@@ -39,29 +39,29 @@ public class Player_Movement : MonoBehaviour
     void FixedUpdate()
     {
  
-        if (Input.GetKey("w") && Grounded)
+        if (Input.GetKey("w") && Grounded) //Move forward
         {
-            Debug.Log("W is pressed");
+            Debug.Log("W is pressed"); 
             rb.AddForce(0,0,Force_Movement * Time.deltaTime);
         }
 
-        if (Input.GetKey("s") && Grounded)
+        if (Input.GetKey("s") && Grounded) //Move backward
         {
             rb.AddForce(0,0,-Force_Movement * Time.deltaTime);
         }
 
-        if (Input.GetKey("d") && Grounded)
+        if (Input.GetKey("d") && Grounded) //Move to the right
         {
             rb.AddForce(Force_Movement * Time.deltaTime, 0,0);
         }
 
-        if (Input.GetKey("a") && Grounded)
+        if (Input.GetKey("a") && Grounded) //Move to the left
         { 
             rb.AddForce(-Force_Movement * Time.deltaTime,0,0);
         }
 
-        if (Key_Press)
-         {
+        if (Key_Press) //Jump
+        {
             rb.AddForce(0, Force_Jump * Time.deltaTime, 0);
             Key_Press=false;
         }
